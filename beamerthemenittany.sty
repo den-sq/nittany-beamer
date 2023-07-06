@@ -1,0 +1,38 @@
+\mode<presentation>
+
+\usepackage{tikz}
+\usetikzlibrary {shapes.geometric}
+\usepackage{graphicx}
+
+\newtoks \lablogo
+\newtoks \institutionlogo
+\newtoks \locationlogo
+
+\usecolortheme{nittany}
+\useinnertheme{nittany}
+\useoutertheme{nittany}
+
+\setbeamertemplate{title page}[nittany]%
+%\setbeamertemplate{headline}[nittany]%
+%\setbeamertemplate{footline}[nittany]%
+
+\BeforeBeginEnvironment{frame}{%
+  \setbeamertemplate{headline}[nittany]%
+  \setbeamertemplate{footline}[nittany]%
+}
+
+\makeatletter
+\define@key{beamerframe}{nittanytitle}[true]{%
+  \setbeamertemplate{headline}[nittanytitle]%
+  \setbeamertemplate{footline}[nittanytitle]%
+  \setbeamertemplate{title page}[nittanytitle]%
+}
+\makeatother
+
+\makeatletter
+\define@key{beamerframe}{nittany}[true]{%
+  \setbeamertemplate{headline}{}%
+  \setbeamertemplate{footline}{}%
+  \setbeamertemplate{title page}[nittany]%
+}
+\makeatother
