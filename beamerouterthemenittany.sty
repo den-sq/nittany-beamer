@@ -72,7 +72,27 @@
 }
 
 % Custom Title Page has no Header
-\defbeamertemplate*{headline}{nittanytitle}{}
+\defbeamertemplate*{headline}{nittanytitle}{
+    \hbox%
+    {%
+        \usebeamerfont{palette primary}%
+        \usebeamercolor{palette primary}%
+        \begin{tikzpicture}[path image/.style={%
+            path picture={%
+            \node at (path picture bounding box.center) {%
+            \includegraphics[height=7.1cm]{##1}%
+            };}}]%
+        \draw [fill=bg, draw=bg, thin]
+             (0.0, 0) -- (\paperwidth - 129.46 - 2.845, 0.0) -- (\paperwidth - 27.03 - 2.845,  \paperheight - 79.67) -- (0.0, \paperheight - 79.67);
+        \draw [fill=bg, draw=bg, thin]
+            (\paperwidth - 27.03,  \paperheight - 79.67) -- (\paperwidth,  \paperheight - 79.67) -- (\paperwidth, 0) -- (\paperwidth - 129.46, 0);
+        \node[text width=10cm, color=fg] at (5.5, 4.1) {\huge\inserttitle\par};
+        \node[text width=7cm, color=fg] at (5.5, 1.1) {%
+            \Large\insertsubtitle\par%
+        };
+        \end{tikzpicture}
+    }%
+}
 
 % Custom Title Page has a funky footer
 \defbeamertemplate*{footline}{nittanytitle}
@@ -90,17 +110,17 @@
         \draw [fill=bg, draw=bg, thin]
             (0.0, 1) -- (0.6, 1) -- (0.1, 0) -- (0.0, 0);
         \draw [fill=bg, draw=bg, thin]
-            (0.7, 1) -- (5.4, 1) -- (4.9, 0) -- (0.2, 0);
+            (0.7, 1) -- (\paperwidth - 207.71 - 2.845, 1) -- (\paperwidth - 221.93 - 2.845, 0) -- (0.2, 0);
         \draw [path image=\the\institutionlogo,draw=bg,thin]
-            (5.5, 1) -- (9.0, 1) -- (8.5, 0) -- (5.0, 0);
+            (\paperwidth - 207.71, 1) -- (\paperwidth - 105.28 - 2.845, 1) -- (\paperwidth - 119.50 - 2.845, 0) -- (\paperwidth - 221.93, 0);
         \draw [path image=\the\locationlogo,draw=bg,thin]
-            (9.1, 1) -- (12.6, 1) -- (12.1, 0) -- (8.6, 0);
+            (\paperwidth - 105.28, 1) -- (\paperwidth - 2.845 * 2, 1) -- (\paperwidth - 17.07 - 2.845, 0) -- (\paperwidth - 119.50, 0);
         \draw [fill=bg, draw=bg,thin]
-            (12.7, 1) -- (12.8, 1) -- (12.8, 0) -- (12.2, 0);
+            (\paperwidth - 2.845, 1) -- (\paperwidth, 1) -- (\paperwidth, 0) -- (\paperwidth - 17.07, 0);
         \node[text width=4cm, color=fg] at (2.8, 0.5) {\insertinstitute\par};
         \end{tikzpicture}
     }%
-    \vskip0pt%
+    \vskip0pt plus -1fill% Bottom align
 }
 
 \defbeamertemplate*{navigation symbols}{nittanytitle}{}
@@ -123,30 +143,9 @@
 }
 
 \defbeamertemplate*{title page}{nittanytitle}
-{%
+{%  Paperwidth is in pts, rest is in centimeters
     \begin{columns}%
     \begin{column}{\paperwidth}%
-
-    \hbox%
-    {%
-        \usebeamerfont{palette primary}%
-        \usebeamercolor{palette primary}%
-        \begin{tikzpicture}[path image/.style={%
-            path picture={%
-            \node at (path picture bounding box.center) {%
-            \includegraphics[height=7.2cm]{##1}%
-            };}}]%
-        \draw [fill=bg, draw=bg, thin]
-            (0.0, 6.7) -- (11.75, 6.7) -- (8.15, 0) -- (0.0, 0);
-        \draw [fill=bg, draw=bg, thin]
-            (11.85, 6.7) -- (\paperwidth, 6.7) -- (\paperwidth, 0) -- (8.25, 0);
-        \node[text width=10cm, color=fg] at (5.5, 4.1) {\huge\inserttitle\par};
-        \node[text width=7cm, color=fg] at (5.5, 1.1) {%
-            \Large\insertsubtitle\par%
-        };
-        \end{tikzpicture}
-    }%
-    \vskip2.5pt
     \hbox%
     {%
         \usebeamerfont{palette tertiary}%
@@ -159,9 +158,9 @@
         \draw [fill=bg, draw=bg, thin]
             (0.0, 1.5) -- (1.45, 1.5) -- (0.7, 0) -- (0.0, 0);
         \draw [fill=bg, draw=bg, thin]
-            (1.55, 1.5) -- (8.05, 1.5) -- (7.3, 0) -- (0.8, 0);
+            (1.55, 1.5) -- (\paperwidth - 132.31 - 2.845, 1.5) -- (\paperwidth - 153.64 - 2.845, 0) -- (0.8, 0);
         \draw [path image=\the\lablogo, fill=bg, draw=bg, thin]
-            (8.15, 1.5) -- (12.8, 1.5) -- (12.8, 0.2) -- (12.7, 0) -- (7.4, 0);
+            (\paperwidth - 132.31, 1.5) -- (\paperwidth, 1.5) -- (\paperwidth, 0.2) -- (\paperwidth - 2.845, 0) -- (\paperwidth - 153.64, 0);
         \node[text width=6cm, color=fg] at (4.8, 0.75) {\huge\insertauthor};
         \end{tikzpicture}
     }%
