@@ -32,23 +32,6 @@
   {\hfill\color{fg!50!bg}\insertsectionhead}
 
                                 % Head
-
-\defbeamertemplate*{headline}{nittany}
-{%
-  \leavevmode%
-  \hbox%
-  {%
-  \usebeamerfont{section in head/foot}%
-  \begin{beamercolorbox}[wd=.33\paperwidth,ht=6ex,dp=1.125ex,right,rightskip=.2cm plus1fil]{section in head/foot}%
-    \insertsection%
-  \end{beamercolorbox}%
-  \usebeamerfont{title in head}%
-  \begin{beamercolorbox}[wd=.67\paperwidth,ht=5.04ex,dp=0.0ex,left,leftskip=.3cm]{title in head}%
-    \insertframetitle%
-  \end{beamercolorbox}%
-  }%
-}
-
 \defbeamertemplate*{frametitle}{nittany}
 {
     \usebeamerfont{subtitle in body}%
@@ -169,5 +152,20 @@
     \end{columns}%
 }
 
+\defbeamertemplate*{headline}{nittany}
+{%
+  \leavevmode%
+  \hbox%
+  {%
+  \usebeamerfont{section in head/foot}%
+  \begin{beamercolorbox}[wd=.33\paperwidth,ht=6ex,dp=1.125ex,right,rightskip=.2cm plus1fil]{section in head/foot}%
+    \insertsection%
+  \end{beamercolorbox}%
+  \usebeamerfont{title in head}%
+  \begin{beamercolorbox}[wd=.67\paperwidth,ht=5.04ex,dp=0.0ex,left,leftskip=.3cm]{title in head}%
+    \insertframetitle%
+  \end{beamercolorbox}%
+  }%
+}
 \mode
 <all>

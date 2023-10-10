@@ -16,3 +16,8 @@ Title page set by parameters on title frame entry.  "nittanytitle" for fancy, "n
 \frame[nittany]{\titlepage}
 
 Current version fancy title only works on 4:3, changing to flexible next version.
+
+## Version 0.9
+
+Now (should) work in all aspect rations for fancy title page.  Tested 4:3, 16:9, 16:10.
+Rejiggered load order to fix weirdness with subsequent headers. 
