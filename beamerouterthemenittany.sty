@@ -31,7 +31,7 @@
   {\hfill\insertsectionhead}
   {\hfill\color{fg!50!bg}\insertsectionhead}
 
-                                % Head
+% Frame Title
 \defbeamertemplate*{frametitle}{nittany}
 {
     \usebeamerfont{subtitle in body}%
@@ -39,6 +39,7 @@
     \insertframesubtitle%
 }
 
+% Standard Footer
 \defbeamertemplate*{footline}{nittany}
 {%
   \leavevmode%
@@ -55,13 +56,14 @@
 }
 
 % Custom Title Page has no Header
-\defbeamertemplate*{headline}{nittanytitle}{
+\defbeamertemplate*{headline}{nittanytitle}
+{%
 	\hbox to \paperwidth%
     {%
         \usebeamerfont{palette primary}%
         \usebeamercolor{palette primary}%
         \begin{tikzpicture}[path image/.style={%
-            path picture={%
+            path picture={%W
             \node at (path picture bounding box.center) {%
             \includegraphics[height=7.1cm]{####1}%
             };}}]%
@@ -102,7 +104,6 @@
         \node[text width=4cm, color=fg] at (2.8, 0.5) {\insertinstitute\par};%
         \end{tikzpicture}%
     }%
-    \vskip0pt plus -1fill% Bottom align
 }
 
 \defbeamertemplate*{navigation symbols}{nittanytitle}{}
@@ -166,5 +167,4 @@
   \end{beamercolorbox}%
   }%
 }
-\mode
-<all>
+\mode <all>
