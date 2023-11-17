@@ -56,7 +56,7 @@
 
 % Custom Title Page has no Header
 \defbeamertemplate*{headline}{nittanytitle}{
-    \hbox%
+	\hbox to \paperwidth%
     {%
         \usebeamerfont{palette primary}%
         \usebeamercolor{palette primary}%
@@ -65,23 +65,22 @@
             \node at (path picture bounding box.center) {%
             \includegraphics[height=7.1cm]{####1}%
             };}}]%
-        \draw [path image=\the\titlebg, fill=bg, draw=bg, thin]
-             (0.0, 0) -- (\paperwidth - 129.46 - 2.845, 0.0) -- (\paperwidth - 27.03 - 2.845,  \paperheight - 79.67) -- (0.0, \paperheight - 79.67);
-        \draw [fill=bg, draw=bg, thin]
-            (\paperwidth - 27.03,  \paperheight - 79.67) -- (\paperwidth,  \paperheight - 79.67) -- (\paperwidth, 0) -- (\paperwidth - 129.46, 0);
-        \node[text width=10cm, color=fg] at (5.5, 4.1) {\huge\inserttitle\par};
+        \fill [path image=\the\titlebg, bg]%
+            (0.0, 0.0) -- (\paperwidth - 129.46 - 2.845, 0.0) -- (\paperwidth - 27.03 - 2.845,  \paperheight - 79.67) -- (0.0, \paperheight - 79.67);%
+        \fill [bg]%
+            (\paperwidth - 27.03,  \paperheight - 79.67) -- (\paperwidth,  \paperheight - 79.67) -- (\paperwidth, 0) -- (\paperwidth - 129.46, 0);%
+        \node[text width=10cm, color=fg] at (5.5, 4.1) {\huge\inserttitle\par};%
         \node[text width=7cm, color=fg] at (5.5, 1.1) {%
             \Large\insertsubtitle\par%
-        };
-        \end{tikzpicture}
+        };%
+        \end{tikzpicture}%
     }%
 }
 
 % Custom Title Page has a funky footer
 \defbeamertemplate*{footline}{nittanytitle}
 {%
-    \leavevmode%
-    \hbox%
+    \hbox to \paperwidth%
     {%
         \usebeamerfont{palette primary}%
         \usebeamercolor{palette primary}%
@@ -90,18 +89,18 @@
             \node at (path picture bounding box.center) {%
             \includegraphics[height=1cm]{####1}%
             };}}]%
-        \draw [fill=bg, draw=bg, thin]
-            (0.0, 1) -- (0.6, 1) -- (0.1, 0) -- (0.0, 0);
-        \draw [fill=bg, draw=bg, thin]
-            (0.7, 1) -- (\paperwidth - 207.71 - 2.845, 1) -- (\paperwidth - 221.93 - 2.845, 0) -- (0.2, 0);
-        \draw [path image=\the\institutionlogo,draw=bg,thin]
-            (\paperwidth - 207.71, 1) -- (\paperwidth - 105.28 - 2.845, 1) -- (\paperwidth - 119.50 - 2.845, 0) -- (\paperwidth - 221.93, 0);
-        \draw [path image=\the\locationlogo,draw=bg,thin]
-            (\paperwidth - 105.28, 1) -- (\paperwidth - 2.845 * 2, 1) -- (\paperwidth - 17.07 - 2.845, 0) -- (\paperwidth - 119.50, 0);
-        \draw [fill=bg, draw=bg,thin]
-            (\paperwidth - 2.845, 1) -- (\paperwidth, 1) -- (\paperwidth, 0) -- (\paperwidth - 17.07, 0);
-        \node[text width=4cm, color=fg] at (2.8, 0.5) {\insertinstitute\par};
-        \end{tikzpicture}
+        \fill [bg]%
+            (0.0, 1) -- (0.6, 1) -- (0.1, 0) -- (0.0, 0);%
+        \fill [bg]%
+            (0.7, 1) -- (\paperwidth - 207.71 - 2.845, 1) -- (\paperwidth - 221.93 - 2.845, 0) -- (0.2, 0);%
+        \fill [path image=\the\institutionlogo, bg]%
+            (\paperwidth - 207.71, 1) -- (\paperwidth - 105.28 - 2.845, 1) -- (\paperwidth - 119.50 - 2.845, 0) -- (\paperwidth - 221.93, 0);%
+        \fill [path image=\the\locationlogo, bg]%
+            (\paperwidth - 105.28, 1) -- (\paperwidth - 2.845 * 2, 1) -- (\paperwidth - 17.07 - 2.845, 0) -- (\paperwidth - 119.50, 0);%
+        \fill [bg]%
+            (\paperwidth - 2.845, 1) -- (\paperwidth, 1) -- (\paperwidth, 0) -- (\paperwidth - 17.07, 0);%
+        \node[text width=4cm, color=fg] at (2.8, 0.5) {\insertinstitute\par};%
+        \end{tikzpicture}%
     }%
     \vskip0pt plus -1fill% Bottom align
 }
@@ -129,7 +128,7 @@
 {%  Paperwidth is in pts, rest is in centimeters
     \begin{columns}%
     \begin{column}{\paperwidth}%
-    \hbox%
+	\hbox to \paperwidth%
     {%
         \usebeamerfont{palette tertiary}%
         \usebeamercolor{palette tertiary}%
@@ -138,14 +137,14 @@
             \node at (path picture bounding box.center) {%
             \includegraphics[height=1.5cm]{####1}%
             };}}]%
-        \draw [fill=bg, draw=bg, thin]
-            (0.0, 1.5) -- (1.45, 1.5) -- (0.7, 0) -- (0.0, 0);
-        \draw [fill=bg, draw=bg, thin]
-            (1.55, 1.5) -- (\paperwidth - 132.31 - 2.845, 1.5) -- (\paperwidth - 153.64 - 2.845, 0) -- (0.8, 0);
-        \draw [path image=\the\lablogo, fill=bg, draw=bg, thin]
-            (\paperwidth - 132.31, 1.5) -- (\paperwidth, 1.5) -- (\paperwidth, 0.2) -- (\paperwidth - 2.845, 0) -- (\paperwidth - 153.64, 0);
-        \node[text width=6cm, color=fg] at (4.8, 0.75) {\huge\insertauthor};
-        \end{tikzpicture}
+        \fill [bg]%
+            (0.0, 1.5) -- (1.45, 1.5) -- (0.7, 0) -- (0.0, 0);%
+        \fill [bg]%
+            (1.55, 1.5) -- (\paperwidth - 132.31 - 2.845, 1.5) -- (\paperwidth - 153.64 - 2.845, 0) -- (0.8, 0);%
+        \fill [path image=\the\lablogo, bg]%
+            (\paperwidth - 132.31, 1.5) -- (\paperwidth, 1.5) -- (\paperwidth, 0.2) -- (\paperwidth - 2.845, 0) -- (\paperwidth - 153.64, 0);%
+        \node[text width=6cm, color=fg] at (4.8, 0.75) {\huge\insertauthor};%
+        \end{tikzpicture}%
     }%
     \vskip0pt plus -1fill% Bottom align
     \end{column}%
