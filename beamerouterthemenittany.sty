@@ -21,11 +21,11 @@
 \setbeamercolor{title in foot}{parent=subsection in head/foot}
 \setbeamercolor{page number in head/foot}{parent=subsection in head/foot}
 
-
 \setbeamerfont{section in head/foot}{size=\small}
 \setbeamerfont{title in head}{size=\large}
 \setbeamerfont{subtitle in body}{size=\normalsize}
 
+\providecommand\insertframetitle{}
 
 \usesectionheadtemplate
   {\hfill\insertsectionhead}
@@ -63,7 +63,7 @@
         \begin{tikzpicture}[path image/.style={%
             path picture={%
             \node at (path picture bounding box.center) {%
-            \includegraphics[height=7.1cm]{##1}%
+            \includegraphics[height=7.1cm]{####1}%
             };}}]%
         \draw [fill=bg, draw=bg, thin]
              (0.0, 0) -- (\paperwidth - 129.46 - 2.845, 0.0) -- (\paperwidth - 27.03 - 2.845,  \paperheight - 79.67) -- (0.0, \paperheight - 79.67);
@@ -88,7 +88,7 @@
         \begin{tikzpicture}[path image/.style={%
             path picture={%
             \node at (path picture bounding box.center) {%
-            \includegraphics[height=1cm]{##1}%
+            \includegraphics[height=1cm]{####1}%
             };}}]%
         \draw [fill=bg, draw=bg, thin]
             (0.0, 1) -- (0.6, 1) -- (0.1, 0) -- (0.0, 0);
@@ -136,7 +136,7 @@
         \begin{tikzpicture}[path image/.style={%
             path picture={%
             \node at (path picture bounding box.center) {%
-            \includegraphics[height=1.5cm]{##1}%
+            \includegraphics[height=1.5cm]{####1}%
             };}}]%
         \draw [fill=bg, draw=bg, thin]
             (0.0, 1.5) -- (1.45, 1.5) -- (0.7, 0) -- (0.0, 0);
