@@ -32,9 +32,25 @@
 \makeatother
 
 \makeatletter
+\define@key{beamerframe}{nittanysection}[true]{%
+  \setbeamertemplate{headline}[nittany]%
+  \setbeamertemplate{footline}[nittany]%
+  \setbeamertemplate{frametitle}[nittanysection]%
+}
+\makeatother
+
+\makeatletter
 \define@key{beamerframe}{nittany}[true]{%
   \setbeamertemplate{headline}{}%
   \setbeamertemplate{footline}{}%
+  \setbeamertemplate{frametitle}[nittany]%
   \setbeamertemplate{title page}[nittany]%
 }
+\makeatother
+
+\newif\ifframeinlbf
+\frameinlbftrue
+
+\makeatletter
+\newcommand\listofframes{\vfill\@starttoc{lbf\thesection}}
 \makeatother

@@ -27,6 +27,9 @@
 
 \providecommand\insertframetitle{}
 
+\let\Contentsline\contentsline
+\renewcommand\contentsline[3]{\Contentsline{#1}{#2}{}}
+
 \usesectionheadtemplate
   {\hfill\insertsectionhead}
   {\hfill\color{fg!50!bg}\insertsectionhead}
@@ -66,7 +69,7 @@
         \begin{tikzpicture}[path image/.style={%
             path picture={%W
             \node at (path picture bounding box.center) {%
-            \includegraphics[height=7.1cm]{####1}%
+            \includegraphics[width=\textwidth]{####1}%
             };}}]%
         \fill [path image=\the\titlebg, bg]%
             (0.0, 0.0) -- (\paperwidth - 129.46 - 2.845, 0.0) -- (\paperwidth - 27.03 - 2.845,  \paperheight - 79.67) -- (0.0, \paperheight - 79.67);%
@@ -85,8 +88,8 @@
 {%
     \hbox to \paperwidth%
     {%
-        \usebeamerfont{palette primary}%
-        \usebeamercolor{palette primary}%
+        \usebeamerfont{palette tertiary}%
+        \usebeamercolor{palette tertiary}%
         \begin{tikzpicture}[path image/.style={%
             path picture={%
             \node at (path picture bounding box.center) {%
@@ -132,8 +135,8 @@
     \begin{column}{\paperwidth}%
 	\hbox to \paperwidth%
     {%
-        \usebeamerfont{palette tertiary}%
-        \usebeamercolor{palette tertiary}%
+        \usebeamerfont{palette quaternary}%
+        \usebeamercolor{palette quaternary}%
         \begin{tikzpicture}[path image/.style={%
             path picture={%
             \node at (path picture bounding box.center) {%
@@ -155,7 +158,7 @@
 
 \defbeamertemplate*{headline}{nittany}
 {%
-  \leavevmode%
+  \nointerlineskip%
   \hbox%
   {%
   \usebeamerfont{section in head/foot}%
@@ -168,4 +171,13 @@
   \end{beamercolorbox}%
   }%
 }
-\mode <all>
+
+\defbeamertemplate*{frametitle}{nittanysection}
+{%
+\ifframeinlbf%
+	\only<1>{\addcontentsline{lbf\thesection}{section}{\insertframetitle\vfill}}%
+\else\fi%
+}
+
+\mode
+<all>
